@@ -11,9 +11,17 @@ To get a frame of video use the getFrameData(uint8_t& data); function passing in
 The retuened image will be in RGBA format.
 The getFrameData function will regulate the images in time with the video framerate, calling the function too quckly will return the same image.
 
+Once loaded the video or stream can be controlled with: play(), pause(), stop(), seekTo(timestamp), enableLooping(true). Stop will stop the video and rewind to the beginning.
+The video status is reflected in the VideoStatus enum, and isPlaying() isLooping(), isLoaded(), isFailed() functions.
+To ensure a video stream is as near to realtime as possible, run the flushBuffers() function after loading and before playing.
+
+Simple Example:
+
     FFmpeg ff;
     ff.Init();
     ff.loadVideoFile("Terminator2.mp4",false);
     std::vector<uint8_t> image(ff.frameWidth * ff.frameHeight * 4);
     ff.getFrameData(image);
+    ...
+    ff.deInit();
     
