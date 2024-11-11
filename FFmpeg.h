@@ -36,8 +36,7 @@ class FFmpeg
 public:
 	FFmpeg();
 	~FFmpeg();
-	void Init();
-	void deInit();
+	
 	int loadVideoFile(const char* filename, bool isDevice);
 	void loadVideoFileAsync(const std::string& filename, bool IsDevice);
 	int readFrame();
@@ -63,7 +62,8 @@ public:
 	FFVideoType			videoType;
 	std::atomic<FFVideoStatus> videoStatus{ LOADING };
 private:
-
+        void Init();
+	void deInit();
 	//common
 	std::chrono::steady_clock::time_point lastFrameTime;
 	uint64_t start;
