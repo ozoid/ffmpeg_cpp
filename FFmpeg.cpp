@@ -396,7 +396,7 @@ bool FFmpeg::isFailed() const {
 }
 //-----------------------------------------------------------------------------
 void FFmpeg::Exit() {
-    videoStatus == EXITING;
+    videoStatus = EXITING;
 }
 //-----------------------------------------------------------------------------
 void FFmpeg::seekTo(int timestamp) {
