@@ -8,9 +8,9 @@ Tested with FFmpeg version: 6.1.1
 First create an instance of the FFmpeg class, then run Init().
 The code separates loading a file from the decoding. Loading/connecting of video, streams and webcams can be initiated with loadVideoFile(filename,isDevice), passing in the name of the file or device and setting the isDevice boolean to true if the device is a webcam. The function loadVideoFileAsync(filename,isDevice) will start a thread and load the file or stream returning immediately.
 
-Once a file or stream is loaded isLoaded() will return true and the videoStatus will be LOADED.
+Once a file or stream is loaded isLoaded() will return true and the VideoStatus will be LOADED.
 To get a frame of video use the getFrameData(uint8_t& data); function passing in a suitable array to store the image.
-The retuened image will be in RGBA format.
+The returned image will be in RGBA format.
 The getFrameData function will regulate the images in time with the video framerate, calling the function too quckly will return the same image.
 
 Once loaded the video or stream can be controlled with: play(), pause(), stop(), seekTo(timestamp), enableLooping(true). Stop will stop the video and rewind to the beginning.
