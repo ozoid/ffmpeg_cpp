@@ -13,6 +13,7 @@ FFmpeg::FFmpeg() {
     av_log_set_level(AV_LOG_QUIET);
     img_convert_ctx = NULL;
     videoType = FFMPEG_VIDEO;
+    Init();
 }
 //-----------------------------------------------------------------------------
 void FFmpeg::Init() {
