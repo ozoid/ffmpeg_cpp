@@ -3,7 +3,8 @@
 There seems to be a lot of history with FFmpeg libraries, so much so, that there is no clear example using the latest FFmpeg API as far as I can find.
 Years worth of stack overflow answers all with a different version of FFmpeg API or subtle differences that failed in newer versions.
 This is my working attempt at playing videos and streams using the FFmpeg library in C++.
-Tested with FFmpeg version: 6.1.1
+Tested with FFmpeg version: 6.1.1 on Windows 10.
+The code currently uses DirectShow to access webcam devices, this would need to be changed to v4l or similar to run webcam devices on Linux.
 
 The code separates loading a file from the decoding. Loading/connecting of video, streams and webcams can be initiated with loadVideoFile(filename,isDevice), passing in the name of the file or device and setting the isDevice boolean to true if the device is a webcam. The function loadVideoFileAsync(filename,isDevice) will start a thread and load the file or stream returning immediately.
 
@@ -30,6 +31,7 @@ tcp://123.0.0.7:5001
 https://213.0.0.6:2040
 
 rtsp://rtspdomain.com:1234
+
 
 
 Simple Example:
