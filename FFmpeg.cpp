@@ -407,11 +407,8 @@ void FFmpeg::seekTo(int timestamp) {
 }
 //-----------------------------------------------------------------------------
 void FFmpeg::deInit() {
-    printf("DeInit:%s\n", filename.c_str());
-    using namespace std::chrono_literals;
     videoStatus == EXITING;
     pause();
-
     if (pFrameRGB != nullptr) {
         av_freep(&pFrameRGB->data[0]);
         av_frame_free(&pFrameRGB);
@@ -419,11 +416,9 @@ void FFmpeg::deInit() {
     if (pFrame != nullptr) {
         av_frame_free(&pFrame);
     }
-
     if (img_convert_ctx != nullptr) {
         sws_freeContext(img_convert_ctx);
     }
-
     if (pFormatCtx != nullptr) {
         avformat_close_input(&pFormatCtx);
     }
