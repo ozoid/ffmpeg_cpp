@@ -20,19 +20,12 @@ To ensure a video stream is as near to realtime as possible, run the flushBuffer
 
 Filenames can be any full path, url or device name:
 
-C:\videos\terminator.mp4
-
-udp://@224.1.1.22:1234?pkt_size=188&overrun_nonfatal=1
-
-video="USB WebCam"
-
-tcp://123.0.0.7:5001
-
-https://213.0.0.6:2040
-
-rtsp://rtspdomain.com:1234
-
-
+- C:\videos\terminator.mp4
+- udp://@224.1.1.22:1234?pkt_size=188&overrun_nonfatal=1
+- video="USB WebCam"
+- tcp://123.0.0.7:5001
+- https://213.0.0.6:2040
+- rtsp://rtspdomain.com:1234
 
 Simple Example:
 
